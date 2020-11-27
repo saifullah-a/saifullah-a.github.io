@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat Web Portfolio Responsive Dengan HTML5, 
+CSS3 dan Jquery.</title>
+	<style type="text/css">
+		
+	/* --- Banner ------------------------- */
+	.banner{
+		width: 100%;
+		height: 70%;
+		background: url(img/banner.jpg) 0 0 repeat;
+		background-attachment: fixed;
+		position: relative;
+	}
+
+	.banner .overlay{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: url(img/overlay.png) 0 100% repeat-x;
+	}
+
+	.logo{
+		width: 100%;
+		position: absolute;
+		bottom: 10%;
+		z-index: 5;
+		text-align: center;
+	}
+
+	.logo img {
+		cursor: pointer;
+		display: inline-block;
+		width: 128px;
+		height: 128px;
+		border: 3px solid rgba(255,255,255,.5);
+		border-radius: 50%;
+	}
+
+	.logo img:hover{
+		border: 3px solid rgba(255,255,255,.7);
+	}
+
+	.logo h1{
+		margin: 0 auto;
+		text-align: center;
+		font-family: 'Montez', cursive;
+		font-size: 100px;
+		color: #eee;
+		text-shadow: 1px 1px 1px #000, 1px 2px 3px #555;
+	}
+
+	.logo .jobdesc{
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 5px auto;
+		color: #eee;
+		font-size: 20px;
+		text-shadow: 1px 1px 1px #000;
+	}
+
+	/* --- Section ------------------------- */
+	section{
+		width: 900px;
+		max-width: 900px;
+		margin: 40px auto;
+	}
+
+	section span{
+		background: #C09A7F;
+		padding: 4px;
+		border-radius: 0 5px 0 0;
+		color: #eee;
+		font-size: 12px;
+	}
+
+	.section{
+		display: table;
+		width: 100%;
+	}
+
+	.section .content{
+		display: table-row;
+		width: 100%;
+	}
+	.section .box{
+		display: table-cell;
+		padding: 10px;
+		width:31.3333%;
+	}
+	.section .box:nth-child(1){
+		background: #eee;
+		border: 5px solid #C09A7F;
+	}
+	.section .box:nth-child(3){
+		border-radius: 0 0 10px 0;
+	}
+	.section .box:hover{
+		background: #ddd;
+	}
+	.section .box h3{
+		padding: 10px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.section .box p{
+		padding: 10px;
+		line-height: 1.5em;
+	}
+	.section .box img{
+		width:100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+	}
+
+	/* --- Gallery ------------------------- */
+	.gallery{
+		display: table;
+		width: 900px;
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.gallery .box{
+		display: table-cell;
+		vertical-align: top;
+		padding: 5px;
+	}
+
+	.gallery .box img{
+		width:100%;
+		height: auto;
+		border-radius: 5px;
+		border: 2px solid #eee;
+	}
+	.gallery .box img:hover{
+		opacity: .8;
+	}
+
+	/*Styling Bagian Testimonial*/
+	.testimonial{
+		position: relative;
+		width: 900px;
+		max-width: 900px;
+		text-align: center;
+		margin: 20px auto;
+		background: #C09A7F;
+		color: #fff;
+	}
+	.testimonial span{
+		position: absolute;
+		right: 0;
+		bottom:0;
+		padding: 5px;
+		background: rgba(0, 38, 51, .5);
+		font-size: 11px;
+	}
+	.testimonial h3{
+		margin: 50px;
+		padding: 50px;
+		display: block;
+		line-height: 2em;
+	}
+
+	.testimonial h3:before{
+		content: " \201C ";
+	}
+	.testimonial h3:after{
+		content: " \201D ";
+	}
+
+	/*Styling Bagian Footer*/
+	footer{
+		border-top: 3px solid #ddd;
+		padding: 30px auto;
+		display: table;
+		width: 900px;
+		max-width: 900px;
+		margin: 40px auto;
+		font-size: 12px;
+	}
+	footer a{
+		text-decoration: none;
+		color: #666;
+		padding: 2px;
+		border-bottom: 1px solid #ddd;
+	}
+	footer a:hover{
+		background: #ddd;
+	}
+	footer .content{
+		width: 100%;
+		display: table-row;
+		vertical-align: center;
+	}
+	footer .box{
+		display: table-cell;
+		padding: 10px;
+		width: 50%;
+	}
+	footer .box:nth-child(2){
+		text-align: right;
+	}
+
+	/*Membuat Menjadi Responsive*/
+	@media (max-width: 860px){
+
+	section, .gallery, .testimonial,
+	footer{
+		width: 90%;
+	}
+	.gallery{
+		padding: 0;
+	}
+	.section .box:nth-child(1){
+		border-radius: 0;
+	}
+	footer{
+		text-align: center;
+	}
+	footer .box{
+		display: block;
+		width: 90%;
+	}
+
+	}
+	@media (max-width: 640px){
+	.banner{
+		height: 101%;
+		min-height: 350px;
+	}
+	.logo h1{
+		font-size: 75px;
+	}
+
+	.gallery .box{
+		/*display: block;*/
+	}
+
+	.section .box{
+		margin:auto;
+		display: block;
+		width: 80%;
+		padding: 5%;
+		border-radius: 0;
+	}
+	footer .box:nth-child(2){
+		text-align: center;
+		width: 90%;
+	}
+	footer .box strong{
+		display: block;
+	}
+	}
+	</style>
+
+
+</head>
+<body>
+
+	<div id="banner">
+		<header id="logo">
+			<img src="img/logo2x.png" alt="">
+			<h1>Bos Tut Web</h1>
+			<span id="jobdesc">
+				An Indonesian Illustrator
+			</span>
+		</header>
+		<div id="overlay"></div>
+	</div>
+
+<section>
+	<span>How I Work</span>
+	<div class="section">
+		<div class="content">
+			<div class="box">
+				<img src="img/box1.jpg" alt="">
+				<h3>Step 1: Sketch.</h3>
+				<p>Pencils Graphite (H) on 17x14" Strathmore Windpower Bristol</p>
+			</div>
+			<div class="box">
+				<img src="img/box2.jpg" alt="">
+				<h3>Step 2: Inking.</h3>
+				<p>Inks Windsor Newton Series 7s (0-2), Copic Technical Pens, White Out. Scanned at 1200DPI (Bitmap)</p>
+			</div>
+			<div class="box">
+				<img src="img/box3.jpg" alt="">
+				<h3>Step 3: Coloring.</h3>
+				<p>Finish Treatment: Photoshop Gradiant layers, hue/adjustment layers. Diffusion achieved using solid fill layer based on colour channel, blurred and reducied to 20% Opacity.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="gallery">
+	<div class="box"><a href="images/1.jpg" title="Gambar 1" desc="Lorem ipsum dolor sit amet, consectetur adipisicing."><img src="images/1.jpg" alt=""></a></div>
+	<div class="box"><a href="images/2.jpg" title="Gambar 2" desc="Lorem ipsum dolor sit amet, consectetur adipisicing."><img src="images/2.jpg" alt=""></a></div>
+	<div class="box"><a href="images/3.jpg" title="Gambar 3" desc="Lorem ipsum dolor sit amet, consectetur adipisicing."><img src="images/3.jpg" alt=""></a></div>
+	<div class="box"><a href="images/4.jpg" title="Gambar 4" desc="Lorem ipsum dolor sit amet, consectetur adipisicing."><img src="images/4.jpg" alt=""></a></div>
+	<div class="box"><a href="images/5.jpg" title="Gambar 5" desc="Lorem ipsum dolor sit amet, consectetur adipisicing."><img src="images/5.jpg" alt=""></a></div>
+</div>
+
+<aside class="testimonial">
+	<span>Testimonial from <strong>'Steve Jobs</strong></span>
+	<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, voluptates, neque. Nesciunt, iste, soluta</h3>
+</aside>
+
+<footer>
+	<div class="content">
+		<div class="box">&copy; All Right Reserved</div>
+		<div class="box"><strong>Find me on: </strong><a href="http://">Twitter</a> / <a href="http://www.facebook.com/bos.tutweb">Facebook</a> / <a href="#">Dribbble</a> / <a href="#">Instagram</a><br><br><strong>Phone:</strong> +6281362069595; <strong>Email:</strong> saifullahipoel629@gmail.com</div>
+	</div>
+</footer>
+
+<script type="text/javascript">
+	(function(window, $) {
+
+	window.requestAnimFrame = (function(){
+	  return  window.requestAnimationFrame       ||
+	          window.webkitRequestAnimationFrame ||
+	          window.mozRequestAnimationFrame    ||
+	          function( callback ){
+	            window.setTimeout(callback, 1000 / 60);
+	          };
+	})();
+
+	var y = 0,
+		f = 0.45;
+
+	function move() {
+		y -= f;
+		$('#banner').css('background-position', 'center ' + y + 'px');
+	  requestAnimationFrame(move);
+	}
+	move();
+
+})(window, jQuery);
+
+Sedangkan untuk gallery agar bisa muncul popup kita tambahkan script seperti berikut, script itu didapat didokumentasi dari plugin nya.
+$(document).ready(function() {
+  $('.gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    tLoading: 'Loading image #%curr%...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+	enabled: true,
+	navigateByImgClick: true,
+	tPrev: 'Previous (Left arrow key)', // title for left button
+	tNext: 'Next (Right arrow key)', // title for right button
+	tCounter: '%curr% of %total%', // markup of counter
+	preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      titleSrc: function(item) {
+        return item.el.attr('title') + '<small>' + item.el.attr('desc') +'</small>';
+      }
+    }
+
+  });
+});
+
+</script>
+
+</body>
+</html>
